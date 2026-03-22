@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Linux Everything
+Comment=Instant File Search Tool
+Exec=/usr/bin/linux_everything web --open
+Icon=utilities-terminal
+Terminal=false
+Type=Application
+Categories=Utility;Filesystem;

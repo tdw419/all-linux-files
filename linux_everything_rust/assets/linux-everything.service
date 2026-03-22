@@ -1,0 +1,12 @@
+[Unit]
+Description=Linux Everything Search Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/bin/linux_everything web --port 3000
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

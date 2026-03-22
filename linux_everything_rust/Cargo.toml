@@ -1,0 +1,50 @@
+[package]
+name = "linux_everything"
+version = "0.1.6"
+edition = "2021"
+description = "Linux Everything - Instant File Search Tool"
+authors = ["Your Name <your.email@example.com>"]
+license = "MIT"
+repository = "https://github.com/yourusername/linux_everything"
+
+[dependencies]
+ignore = "0.4.20"
+rusqlite = { version = "0.30.0", features = ["bundled"] }
+notify = "6.1.1"
+tokio = { version = "1.0", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+dirs = "5.0.1"
+# Native GUI options
+eframe = "0.29.1"  # For egui-based native GUI
+# iced = "0.10.0"    # For iced native GUI framework
+regex = "1.10.2"
+lazy_static = "1.4.0"
+anyhow = "1.0.75"
+clap = { version = "4.4.11", features = ["derive"] }
+tracing = "0.1.40"
+tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
+
+[build-dependencies]
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true
+
+[package.metadata.deb]
+maintainer = "Your Name <your.email@example.com>"
+copyright = "2025, Your Name"
+depends = "$auto"
+section = "utils"
+priority = "optional"
+assets = [
+    ["target/release/linux_everything", "usr/bin/", "755"],
+    ["assets/linux-everything.desktop", "usr/share/applications/", "644"],
+    ["assets/linux-everything-daemon.service", "lib/systemd/system/", "644"],
+]
+extended-description = """
+A high-performance file search tool for Linux, inspired by Everything.
+Features instant search, real-time monitoring, and a native GUI.
+"""

@@ -1,0 +1,12 @@
+[Unit]
+Description=Linux Everything Search Daemon
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/bin/linux_everything daemon
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

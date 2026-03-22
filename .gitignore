@@ -1,0 +1,30 @@
+# .gitignore for All Linux Files (ALF)
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+.env
+
+# Rust
+linux_everything_rust/target/
+**/*.rs.bk
+
+# Databases
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+thumbs.db
